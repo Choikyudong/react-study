@@ -9,6 +9,19 @@ import Props from "./Props";
 import PropsStyle from "./PropsStyle";
 import DefaultProps from "./DefaultProps";
 import TagProps from "./TagProps";
+import UseStateEx from "./UseStateEx";
+import MultipleState from "./MultipleState";
+import EventHandler from "./EventHandler";
+import EventProps from "./EventProps";
+import ConditionalRender from "./ConditionalRender";
+import ArrayRender from "./ArrayRender";
+import ArrayRenderApply from "./ArrayRenderApply";
+import ReactHookState from "./ReactHookState";
+import {PropContext, PropDrilling} from "./PropDrilling";
+import MyContext from "./MyContext";
+import RefHooks from "./RefHooks";
+import EffectHooks from "./EffectHooks";
+import {PerformanceHook} from "./PerformanceHook";
 
 export default function App() {
   const element = <h1 className="title">Hello React!</h1>
@@ -74,6 +87,73 @@ export default function App() {
       <>
         <h4>태그 사이의 값으로도 전달 가능함;;</h4>
         <TagProps>헐....</TagProps>
+      </>
+      <br/>
+      <>
+        <h4>식상한 버튼 증가 컴포넌트</h4>
+        <UseStateEx />
+      </>
+      <br/>
+      <>
+        <h4>객체 형태도 가능</h4>
+        <MultipleState />
+      </>
+      <br/>
+      <>
+        <h4>이벤트 핸들러</h4>
+        <EventHandler />
+      </>
+      <br/>
+      <>
+        <h4>이벤트 핸들러에 props 참조</h4>
+        <EventProps />
+      </>
+      <br/>
+      <>
+        <h4>조건부 렌더링</h4>
+        <ConditionalRender />
+      </>
+      <br/>
+      <>
+        <h4>배열 렌더링</h4>
+        <ArrayRender />
+      </>
+      <br/>
+      <>
+        <h4>배열 렌더링 응용</h4>
+        <ArrayRenderApply />
+      </>
+      <br/>
+      <>
+        <h4>Hook 사용하기</h4>
+        <ReactHookState />
+      </>
+      <br/>
+      <>
+        <h4>Prop Driilling</h4>
+        <div>자식 컴포넌트이 많아질수록 전달하기가 힘듬</div>
+        <PropDrilling drilling={"안녕"} />
+        <div>무분별한 context 사용은 금지</div>
+        <MyContext.Provider value={"컨텍스트!"}>
+          <PropContext />
+        </MyContext.Provider>
+      </>
+      <br/>
+      <>
+        <h4>Ref Hooks</h4>
+        <div>값 변경시 렌더링이 되지않으므로 dom 조작시 사용</div>
+        <RefHooks />
+      </>
+      <br/>
+      <>
+        <h4>Effect Hooks</h4>
+        <EffectHooks />
+      </>
+      <br/>
+      <>
+        <h4>성능과 관련된 Hooks</h4>
+        <div>컴포넌트 최적화중 일반적인 방법은 불필요한 작업을 건너뛰는것이다.</div>
+        <PerformanceHook />
       </>
     </>
   );
